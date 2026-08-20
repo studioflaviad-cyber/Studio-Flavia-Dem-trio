@@ -6,6 +6,7 @@
 <title>Limpeza de Pele Profunda em Paulicéia, São Bernardo do Campo | Studio Flávia Demétrio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-logo-flavia-demetrio-estetica-facial-pauliceia-sao-bernardo-do-campo.png" type="image/png">
 <style>
   :root{
     --purple-deep:#3B1748;
@@ -88,19 +89,37 @@
       radial-gradient(circle at 90% 80%, rgba(228,201,126,.08), transparent 35%);
     pointer-events:none;
   }
-  .hero-inner{position:relative;z-index:2;padding:120px 0 90px;}
+  .hero-inner{position:relative;z-index:2;padding:100px 0 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero-text{max-width:none;}
+  .hero-photo{
+    position:relative;
+    border-radius:6px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    background:linear-gradient(155deg,var(--purple-soft),var(--purple-deep));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    border:1px solid rgba(228,201,126,.25);
+  }
+  .hero-photo::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(228,201,126,.45), transparent 55%),
+      radial-gradient(circle at 80% 85%, rgba(255,255,255,.12), transparent 45%);
+  }
+  .hero-photo svg{position:relative;z-index:2;width:36%;opacity:.92;}
+  .hero-photo .photo-tag{position:absolute;bottom:16px;left:16px;z-index:2;}
   .hero .eyebrow{color:var(--gold-light);}
   .hero h1{
     color:var(--white);
-    font-size:clamp(2.2rem,5vw,3.4rem);
-    max-width:760px;
+    font-size:clamp(2rem,4vw,3rem);
     margin-bottom:22px;
   }
   .hero h1 em{color:var(--gold-light);font-style:normal;}
   .hero p{
     color:rgba(255,255,255,.82);
-    max-width:600px;
-    font-size:1.08rem;
+    font-size:1.05rem;
     margin-bottom:38px;
     font-weight:300;
   }
@@ -183,94 +202,40 @@
   }
   .obj-item span{font-size:.98rem;color:var(--text-dark);}
 
-  /* steps */
-  .steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:32px;
-    counter-reset:step;
-  }
-  .step{
-    background:var(--white);
-    border-radius:4px;
-    padding:34px 28px;
-    border:1px solid var(--cream-dark);
-    position:relative;
-  }
-  .step::before{
-    counter-increment:step;
-    content:counter(step,decimal-leading-zero);
-    font-family:'Playfair Display',serif;
-    font-size:2.2rem;
-    color:var(--gold);
-    opacity:.55;
-    display:block;
-    margin-bottom:12px;
-  }
-  .step h3{font-size:1.15rem;margin-bottom:10px;}
-  .step p{color:var(--text-muted);font-size:.95rem;}
-
-  /* concern cards with image */
-  .concerns{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-  .concern-card{
-    background:var(--white);
-    border-radius:4px;
-    overflow:hidden;
-    border:1px solid var(--cream-dark);
-    display:flex;
-    flex-direction:column;
-  }
-  .concern-img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    display:block;
-  }
-  .concern-body{padding:32px;}
-  .concern-card h3{color:var(--purple-deep);font-size:1.3rem;margin-bottom:10px;}
-  .concern-card p{color:var(--text-muted);font-size:.95rem;margin-bottom:8px;}
-  .concern-card .note{
-    font-size:.82rem;
-    color:var(--gold);
-    border-top:1px solid var(--cream-dark);
-    padding-top:10px;
-    margin-top:10px;
-  }
-
-  /* gallery */
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .gallery-item{aspect-ratio:3/4;}
-
-  /* benefits */
-  .benefits{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
-  .benefit{
-    text-align:center;
-    padding:26px 14px;
-  }
-  .benefit .icon{
-    width:52px;height:52px;
-    margin:0 auto 16px;
-    border-radius:50%;
+  /* gallery — imagens completas, sem corte */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .gallery-item{
+    aspect-ratio:auto;
     background:var(--cream-dark);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--purple-deep);
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .benefit h4{font-size:1rem;margin-bottom:8px;color:var(--purple-deep);}
-  .benefit p{font-size:.85rem;color:var(--text-muted);}
 
+  .gallery .gallery-item img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:contain;
+    display:block;
+  }
   /* who its for */
   .who-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:56px;
     align-items:center;
+    background-color: #210A2B;
+    
   }
+  
   .who-list{list-style:none;}
   .who-list li{
     padding:14px 0 14px 30px;
     position:relative;
-    border-bottom:1px solid var(--cream-dark);
-    color:var(--text-dark);
+    border-bottom:1px solid rgba(255,255,255,.2);
+    color:var(--white);
   }
   .who-list li:last-child{border-bottom:none;}
   .who-list li::before{
@@ -282,9 +247,10 @@
 
   /* why choose */
   .why{
-    background:linear-gradient(160deg,var(--purple-deep),#2A0F35);
+   
     color:var(--white);
-  }
+    }
+  
   .why .sec-head h2{color:var(--white);}
   .why .sec-head p{color:rgba(255,255,255,.75);}
   .why-text{max-width:700px;margin:0 auto;text-align:center;}
@@ -305,7 +271,12 @@
     text-align:center;
     padding:24px;
   }
-
+  .antes-e-depois-limpeza-pele img{
+    width: 100%;
+    max-width: 700px; /* A imagem crescerá até 600px de largura máxima */
+    height: auto;
+background-color: #FFFFFF;
+  }
   /* faq */
   .faq{max-width:760px;margin:0 auto;}
   details{
@@ -361,12 +332,14 @@
   footer strong{color:var(--gold-light);font-family:'Playfair Display',serif;}
 
   @media(max-width:820px){
-    .intro-grid,.who-grid,.loc-grid,.concerns{grid-template-columns:1fr;}
+    .intro-grid,.who-grid,.loc-grid{grid-template-columns:1fr;}
     .intro-visual{order:-1;}
     .obj-grid{grid-template-columns:1fr;}
-    .steps{grid-template-columns:1fr;}
-    .benefits{grid-template-columns:repeat(2,1fr);}
+    .hero-inner{grid-template-columns:1fr;padding:80px 0 60px;}
+    .hero-photo{aspect-ratio:16/10;order:-1;}
     section{padding:64px 0;}
+    .gallery{grid-template-columns:1fr;}
+    .gallery .gallery-item img{max-height:none;}
   }
 </style>
 </head>
@@ -375,12 +348,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <span class="eyebrow">Studio Flávia Demétrio · Estética Facial</span>
-      <h1>Limpeza de Pele Profunda em Paulicéia, <em>São Bernardo do Campo</em></h1>
-      <p>Sua pele está com cravos, excesso de oleosidade ou aquela sensação de que precisa de um cuidado especial? No Studio Flávia Demétrio, você encontra limpeza de pele em Paulicéia, São Bernardo do Campo, com atendimento personalizado de acordo com as características da sua pele.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn">Agendar pelo WhatsApp</a>
-        <a href="#faq" class="btn btn-outline">Tirar dúvidas</a>
+      <div class="hero-text">
+        <span class="eyebrow">Studio Flávia Demétrio · Estética Facial</span>
+        <h1>Limpeza de Pele Profunda em Paulicéia, <em>São Bernardo do Campo</em></h1>
+        <p>Sua pele está com cravos, excesso de oleosidade ou aquela sensação de que precisa de um cuidado especial? No Studio Flávia Demétrio, você encontra limpeza de pele em Paulicéia, São Bernardo do Campo, com atendimento personalizado de acordo com as características da sua pele.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn">Agendar pelo WhatsApp</a>
+          <a href="#faq" class="btn btn-outline">Tirar dúvidas</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+       <img src="imagem/limpeza-de-pele-profunda-mascara-pauliceia-sao-bernardo-do-campo.jpg" alt="Limpeza de pele profunda em Paulicéia, São Bernardo do Campo">
+        <span class="photo-tag">Studio Flávia Demétrio</span>
       </div>
     </div>
   </section>
@@ -389,20 +368,40 @@
   <section>
     <div class="wrap intro-grid">
       <div class="photo intro-visual">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="46" stroke="#E4C97E" stroke-width="1"/>
-          <path d="M50 20c-14 0-25 11-25 25s11 25 25 25 25-11 25-25S64 20 50 20z" stroke="#E4C97E" stroke-width="1"/>
-          <circle cx="50" cy="50" r="6" fill="#E4C97E"/>
-        </svg>
-        <span class="photo-tag">Atendimento</span>
+        <img src="./imagem/limpeza-de-pele-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="">
+        
       </div>
       <div class="intro-copy">
         <span class="eyebrow">O que é</span>
-        <h2>Um momento para cuidar do seu rosto</h2>
-        <p>A limpeza de pele é um momento para cuidar do rosto, remover impurezas e proporcionar uma sensação de pele mais limpa, macia e renovada.</p>
-        <p>Ao longo do dia, nossa pele fica exposta à poluição, suor, oleosidade, maquiagem e resíduos de produtos. Mesmo com os cuidados realizados em casa, algumas impurezas podem se acumular. A limpeza de pele profunda em Paulicéia é um procedimento estético que auxilia na higienização da pele e na remoção de células mortas, cravos, excesso de oleosidade e impurezas.</p>
-        <p>No Studio Flávia Demétrio, cada atendimento é realizado de acordo com as necessidades da pele, porque cada pessoa possui características diferentes. Más do que simplesmente limpar o rosto, é um momento para cuidar de você.</p>
+        <h2>Limpeza de Pele Profunda em Paulicéia</h2>
+        <p>Ao longo do dia, sua pele fica exposta à poluição, suor, oleosidade, maquiagem e resíduos de produtos. Mesmo com os cuidados em casa, algumas impurezas podem se acumular.</p>
+        <p>A limpeza de pele profunda é um procedimento estético que auxilia na higienização da pele e na remoção de células mortas, cravos, oleosidade excessiva e impurezas, deixando a pele com uma aparência mais limpa, leve e renovada.</p>
+        <p>Eu sou Flávia, profissional de estética, e realizo cada atendimento com atenção às necessidades e características da sua pele. No Studio Flávia Demétrio, em Paulicéia, São Bernardo do Campo, o atendimento é personalizado para proporcionar um momento de cuidado e bem-estar.</p>
+        <p>Cuide da sua pele com um atendimento pensado para você.</p>
         <a href="#" class="btn" style="width:fit-content;margin-top:10px;">Agendar minha limpeza de pele</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É INDICADA -->
+  <section class="why">
+    <div class="wrap who-grid">
+      <div class="photo" style="min-height:340px;">
+
+        <img src="./imagem/limpeza-de-pele-profunda-pauliceia-sao-bernardo.jpg" alt="Limpeza de pele profunda em Paulicéia, São Bernardo do Campo">
+      </div>
+      <div>
+        <span class="eyebrow">Para quem é indicada</span>
+        <h2 style="color:var(--white);font-size:1.8rem;margin-bottom:16px;">Limpeza de pele é indicada para diferentes públicos, desde adolescentes até adultos, principalmente para quem sofre com:</h2>
+        <ul class="who-list" style="color:var(--white);">
+          <li>Pele oleosa ou mista</li>
+          <li>Cravos frequentes</li>
+          <li>Poros obstruídos</li>
+          <li>Excesso de oleosidade</li>
+          <li>Acúmulo de impurezas</li>
+          <li>Pele exposta à poluição</li>
+        </ul>
+        <div style="margin-top:24px;"><a href="#" class="btn">Falar com a Flávia</a></div>
       </div>
     </div>
   </section>
@@ -412,145 +411,43 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Para que serve</span>
-        <h2>O que a limpeza de pele ajuda a cuidar</h2>
+        <h2>Benefícios da limpeza de pele profunda em Paulicéia, São Bernardo do Campo</h2>
         <p>A limpeza de pele pode ser procurada por diferentes motivos. Algumas pessoas querem cuidar da oleosidade, outras desejam remover cravos ou simplesmente reservar um momento para cuidar do rosto.</p>
       </div>
       <div class="obj-grid">
-        <div class="obj-item"><span class="dot"></span><span>Remover impurezas acumuladas</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Auxiliar na remoção de cravos</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Remover células mortas</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Auxiliar no controle da oleosidade</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Melhorar a textura da pele</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Auxiliar na desobstrução dos poros</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Proporcionar uma sensação de pele mais limpa</span></div>
-        <div class="obj-item"><span class="dot"></span><span>Deixar a pele com aparência mais renovada</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section>
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Como funciona</span>
-        <h2>O atendimento em Paulicéia</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="photo" style="aspect-ratio:4/3;margin-bottom:18px;">
-            <svg viewBox="0 0 60 60" width="30%"><circle cx="30" cy="30" r="24" stroke="#E4C97E" stroke-width="1" fill="none"/></svg>
-          </div>
-          <h3>Preparação</h3>
-          <p>O atendimento começa com a preparação e higienização inicial da pele.</p>
-        </div>
-        <div class="step">
-          <div class="photo" style="aspect-ratio:4/3;margin-bottom:18px;">
-            <svg viewBox="0 0 60 60" width="30%"><rect x="14" y="14" width="32" height="32" stroke="#E4C97E" stroke-width="1" fill="none"/></svg>
-          </div>
-          <h3>Avaliação e Etapas</h3>
-          <p>Depois, são realizadas as etapas necessárias de acordo com as características observadas durante a sessão.</p>
-        </div>
-        <div class="step">
-          <div class="photo" style="aspect-ratio:4/3;margin-bottom:18px;">
-            <svg viewBox="0 0 60 60" width="30%"><path d="M30 12 L46 44 L14 44 Z" stroke="#E4C97E" stroke-width="1" fill="none"/></svg>
-          </div>
-          <h3>Cuidado Personalizado</h3>
-          <p>Cuidados específicos para auxiliar na remoção de impurezas, células mortas, oleosidade e cravos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONCERNS (Cravos e Oleosa com Imagens) -->
-  <section class="alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Cuidados específicos</span>
-        <h2>Cravos e pele oleosa</h2>
-      </div>
-      <div class="concerns">
-        
-        <!-- Bloco 1: Cravos -->
-        <div class="concern-card">
-          <img src="cravos.jpg" alt="Tratamento de cravos" class="concern-img">
-          <div class="concern-body">
-            <h3>Limpeza para Cravos</h3>
-            <p>Os cravos são uma das principais razões pelas quais muitas pessoas procuram uma limpeza de pele em Paulicéia. O acúmulo de oleosidade e impurezas pode contribuir para o aparecimento de cravos, e o procedimento recebe cuidados específicos.</p>
-            <div class="note">Evite apertar cravos em casa, principalmente de forma agressiva. A manipulação inadequada pode irritar a pele e deixar marcas.</div>
-          </div>
-        </div>
-
-        <!-- Bloco 2: Pele Oleosa -->
-        <div class="concern-card">
-          <img src="pele-oleosa.jpg" alt="Tratamento de pele oleosa" class="concern-img">
-          <div class="concern-body">
-            <h3>Para Pele Oleosa</h3>
-            <p>Sua pele fica oleosa rapidamente? A limpeza de pele em São Bernardo do Campo pode fazer parte dos cuidados de quem apresenta excesso de oleosidade, auxiliando na higienização e na remoção de impurezas acumuladas.</p>
-            <div class="note">A frequência das sessões deve ser definida de acordo com as características e necessidades de cada pessoa.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section>
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Benefícios</span>
-        <h2>O que você leva desse cuidado</h2>
-        <p>A limpeza de pele profunda em Paulicéia pode contribuir para os cuidados com diferentes tipos de pele.</p>
-      </div>
-      <div class="benefits">
-        <div class="benefit"><div class="icon">✦</div><h4>Impurezas</h4><p>Auxilia na remoção de resíduos acumulados.</p></div>
-        <div class="benefit"><div class="icon">✦</div><h4>Cravos</h4><p>Respeita as características da pele.</p></div>
-        <div class="benefit"><div class="icon">✦</div><h4>Oleosidade</h4><p>Faz parte da rotina de cuidados.</p></div>
-        <div class="benefit"><div class="icon">✦</div><h4>Células Mortas</h4><p>Contribui para uma aparência renovada.</p></div>
-        <div class="benefit"><div class="icon">✦</div><h4>Pele Limpa</h4><p>Sensação de frescor e cuidado.</p></div>
+        <div class="obj-item"><span class="dot"></span><span>Ajuda a controlar a oleosidade excessiva do rosto</span></div>
+        <div class="obj-item"><span class="dot"></span><span>Ajuda a prevenir rugas e linhas de expressão</span></div>
+        <div class="obj-item"><span class="dot"></span><span>Ajuda a melhorar a aparência de cravos</span></div>
+        <div class="obj-item"><span class="dot"></span><span>Ajuda a deixar a pele mais luminosa e com aparência menos opaca</span></div>
       </div>
     </div>
   </section>
 
   <!-- ANTES E DEPOIS -->
-  <section class="alt">
+  <section class="antes-e-depois-limpeza-pele">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Antes e depois</span>
-        <h2>Resultados reais</h2>
-        <p>Quer conhecer melhor o trabalho realizado no Studio Flávia Demétrio? Aqui você pode apresentar fotos reais de antes e depois da limpeza de pele, mostrando o atendimento realizado em clientes. <em>Resultados individuais podem variar de acordo com as características da pele e os cuidados realizados. Utilize somente imagens reais de clientes com autorização para divulgação.</em></p>
+        <h2>Antes e depois da limpeza de pele em Paulicéia, São Bernardo do Campo</h2>
       </div>
       <div class="gallery">
         <div class="photo gallery-item">
-          <span class="photo-tag">Antes e Depois 1</span>
+          <img src="imagem/antes-durante-depois-limpeza-de-pele-studio-flavia-demetrio-pauliceia-sao-bernardo-do-campo.jpg" alt="Antes, durante e depois da limpeza de pele em Paulicéia, São Bernardo do Campo" sizes="" srcset="">
         </div>
         <div class="photo gallery-item">
-          <span class="photo-tag">Antes e Depois 2</span>
+          <img src="imagem/antes-durante-depois-limpeza-de-pele-com-mascara-led-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="" srcset="">
         </div>
         <div class="photo gallery-item">
-          <span class="photo-tag">Antes e Depois 3</span>
+          <img src="imagem/antes-e-depois-limpeza-de-pele-profunda-pauliceia-sao-bernardo-do-campo.jpg" alt="Antes e depois da limpeza de pele com máscara LED no Studio Flávia Demétrio em Paulicéia, São Bernardo do Campo">
         </div>
-      </div>
-    </div>
-  </section>
+         <div class="photo gallery-item">
+          <img src="imagem/antes-e-depois-limpeza-de-pele-profunda-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="Antes e depois da limpeza de pele profunda no Studio Flávia Demétrio em Paulicéia, São Bernardo do Campo">
+        </div>
+                 <div class="photo gallery-item">
+          <img src="imagem/limpeza-de-pele-profissional-para-cravos-e-espinhas-paulicea-sao-bernardo-do-campo-sp.jpg" alt="Antes e depois da limpeza de pele para cravos e espinhas no Studio Flávia Demétrio em Paulicéia, São Bernardo do Campo">
+        </div>
+     
 
-  <!-- PARA QUEM É INDICADA -->
-  <section class="why">
-    <div class="wrap who-grid">
-      <div class="photo" style="min-height:340px;">
-        <svg viewBox="0 0 100 100" width="30%"><circle cx="50" cy="50" r="40" stroke="#E4C97E" stroke-width="1" fill="none"/></svg>
-      </div>
-      <div>
-        <span class="eyebrow">Para quem é indicada</span>
-        <h2 style="color:var(--white);font-size:1.8rem;margin-bottom:16px;">Sinais de que sua pele pede cuidado</h2>
-        <p style="color:rgba(255,255,255,.85);margin-bottom:16px;font-size:.98rem;">A limpeza de pele pode ser procurada por pessoas que desejam cuidar melhor da aparência do rosto, especialmente quem percebe:</p>
-        <ul class="who-list" style="color:rgba(255,255,255,.85);">
-          <li>Cravos e excesso de oleosidade</li>
-          <li>Acúmulo de impurezas e células mortas</li>
-          <li>Textura irregular na pele</li>
-          <li>Necessidade de uma higienização mais profunda</li>
-        </ul>
-        <div style="margin-top:24px;"><a href="#" class="btn">Falar com a Flávia</a></div>
+     
       </div>
     </div>
   </section>
@@ -601,8 +498,8 @@
           <p>A sensação durante o procedimento pode variar de acordo com a sensibilidade da pele e as etapas realizadas.</p>
         </details>
         <details>
-          <summary>Onde fazer limpeza de pele em Paulicéia?</summary>
-          <p>O Studio Flávia Demétrio, localizado em Paulicéia, São Bernardo do Campo – SP, oferece atendimento de estética facial e limpeza de pele personalizada.</p>
+          <summary>Onde fazer limpeza de pele em São Bernardo do Campo?</summary>
+          <p>A limpeza de pele em São Bernardo do Campo é realizada no Studio Flávia Demétrio, localizado na região da Paulicéia. O atendimento é voltado para quem deseja cuidar da pele, remover impurezas e melhorar sua aparência. Atendemos clientes de regiões próximas, como Taboão, Anchieta, Assunção, Jardim do Mar e Vila Caminho do Mar. Entre em contato para saber mais sobre a limpeza de pele e agendar seu atendimento.</p>
         </details>
       </div>
     </div>

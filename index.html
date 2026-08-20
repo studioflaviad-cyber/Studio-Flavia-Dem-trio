@@ -9,6 +9,7 @@
     <meta name="keywords" content="estética facial, limpeza de pele, microagulhamento, micropigmentação, Paulicéia, São Bernardo do Campo, Flavia Demétrio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.studioflaviademetrio.com.br/">
+    <link rel="icon" href="favicon-logo-flavia-demetrio-estetica-facial-pauliceia-sao-bernardo-do-campo.png" type="image/png">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.studioflaviademetrio.com.br/">
@@ -281,53 +282,190 @@
             background-color: var(--white);
         }
 
-        /* Banner Principal */
-        .hero {
-            min-height: 100vh;
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(85, 31, 99, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header.scrolled {
+            background: rgba(85, 31, 99, 0.95);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
             display: flex;
-            margin: auto;
-            justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(44, 15, 53, 0.8), rgba(85, 31, 99, 0.7)), url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            justify-content: space-between;
+        }
+
+        /* LOGO MAIOR */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 9rem;
+            font-weight: 700;
             color: var(--white);
-            text-align: center;
-            padding-top: 90px;
+            line-height: 1.1;
+            width: 300px;
+            background-color: #25D366;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover { color: var(--accent); }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        /* Logo do header (imagem) */
+        .nav-container > img {
+            height: 95px;
+            width: auto;
+            max-width: 280px;
+            object-fit: contain;
+        }
+
+        /* BANNER PRINCIPAL MAIOR E MAIS IMPONENTE */
+        .hero {
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            
+            background: url('Banner/Banner-studio-flavia-demetrio-estetica-pauliceia-sao-bernardo-do-campo.png') no-repeat right center fixed;
+            background-size: cover; 
+            
+            color: var(--white);
+            padding-top: 120px;
+            padding-bottom: 60px;
+            padding-left: 6%; 
+            padding-right: 38%;
+            
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box; 
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 750px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-align: justify;
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            text-align: left;
         }
 
         .hero h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 400;
             color: var(--accent);
             margin-bottom: 1.5rem;
             font-family: 'Poppins', sans-serif;
-            text-align: justify;
+            text-align: left;
         }
 
         .hero p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            margin-bottom: 2.2rem;
             color: #E2D8E5;
-            text-align: justify;
+            text-align: left;
+            line-height: 1.6;
         }
 
         .hero-btns {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             justify-content: flex-start;
             flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 100px;
+                padding-left: 5%;
+                padding-right: 5%;
+                min-height: auto;
+            }
+            .hero-content {
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            .hero h1, .hero h2, .hero p {
+                text-align: center;
+            }
+            .logo {
+                font-size: 1.8rem;
+            }
+            .nav-container > img {
+                height: 65px;
+            }
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+                min-height: auto;
+            }
+            .hero-content {
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            .hero h1, .hero h2, .hero p {
+                text-align: center;
+            }
+            .hero-img img {
+                max-height: 50vh;
+                margin-top: 20px;
+            }
         }
 
         /* Sobre */
@@ -383,7 +521,7 @@
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             display: flex;
-            flex-basis: 400px;
+            flex-basis: 500px;
             flex-grow: 1;
             flex-direction: column;
             justify-content: space-between;
@@ -396,7 +534,7 @@
 
         .service-img {
             width: 100%;
-            height: 220px;
+            height:100%;
             object-fit: cover;
             transition: var(--transition);
         }
@@ -473,9 +611,11 @@
 
         .gallery-item img {
             width: 100%;
-            height: 320px;
+            height: 500px;
             object-fit: cover;
             transition: var(--transition);
+
+            background-color: #1A0A1F;
         }
 
         .gallery-item:hover img {
@@ -493,22 +633,115 @@
             font-size: 0.85rem;
         }
 
-        /* Avaliações */
-        .reviews-grid {
+        /* Quem Sou */
+        .quemsou-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .review-card {
+        .quemsou-img {
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quemsou-grid p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .quemsou-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0 1.6rem 0;
+        }
+
+        .quemsou-tag {
+            background: var(--bg-light);
+            border: 1px solid rgba(111, 44, 127, 0.15);
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        /* Depoimentos / Avaliações Google */
+        .depoimentos-container {
+            max-width: 1150px;
+            margin: 2.5rem auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .depoimento {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.8rem;
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
+            text-align: left;
+            transition: var(--transition);
         }
 
-        .stars { color: var(--accent); margin-bottom: 0.5rem; }
+        .depoimento:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .depoimento-topo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 1rem;
+        }
+
+        .depoimento-topo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .depoimento-topo strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--primary-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .estrelas {
+            margin-top: 4px;
+            letter-spacing: 2px;
+            color: var(--accent);
+        }
+
+        .depoimento p {
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .depoimento .google {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .depoimentos-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .depoimentos-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
         /* FAQ */
         .faq-grid {
@@ -546,6 +779,21 @@
             height: 320px;
             border: 0;
             border-radius: var(--radius-md);
+        }
+
+        .mapa-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .mapa-container iframe {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
         }
 
         /* Rodapé */
@@ -614,7 +862,7 @@
             .nav-menu.active { right: 0; }
             .hero h1 { font-size: 2rem; }
             .hero h2 { font-size: 1.2rem; }
-            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-grid, .contact-grid, .quemsou-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; }
             .gallery-item img { height: 240px; }
         }
@@ -624,13 +872,14 @@
 
     <header class="header" id="header">
         <div class="container nav-container">
-            <a href="#hero" class="logo">Studio <span>Flavia Demétrio</span></a>
+            <img src="logo/logo.jpg" alt="" srcset="">
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#hero" class="nav-link">Início</a></li>
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#quemsou" class="nav-link">Quem Sou</a></li>
                 <li><a href="#formacao" class="nav-link">Formação</a></li>
                 <li><a href="#servicos" class="nav-link">Serviços</a></li>
                 <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
@@ -643,9 +892,9 @@
 
     <section class="hero" id="hero">
         <div class="container hero-content">
-            <h1 class="reveal">Estética Facial em Paulicéia, São Bernardo do Campo</h1>
-            <h2 class="reveal">Sua beleza merece cuidados especiais</h2>
-            <p class="reveal">Sou Flávia, esteticista facial. Desde 2022, cuido da pele e da autoestima de pessoas em Paulicéia, São Bernardo do Campo, oferecendo tratamentos personalizados com carinho, cuidado e atenção. No Studio Flavia Demétrio, você encontra procedimentos de estética facial pensados para valorizar sua beleza natural e cuidar das necessidades da sua pele.</p>
+            <h1 class="reveal">Studio Flavia Demétrio | Esteticista na Paulicéia, São Bernardo do Campo</h1>
+            
+            <p class="reveal">Há 6 anos atuando como esteticista na Paulicéia, São Bernardo do Campo, com atendimento personalizado em limpeza de pele, microagulhamento, micropigmentação, drenagem linfática, massagens e depilação..</p>
             <div class="hero-btns reveal">
                 <a href="https://wa.me/5511994986162?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary" target="_blank" rel="noopener">📲 Agendar pelo WhatsApp</a>
                 <a href="#contato" class="btn btn-secondary">📍 Como Chegar</a>
@@ -653,7 +902,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="sobre">
+    <section class="section-padding" id="sobre" style="background-color: var(--white);">
         <div class="container">
             <div class="about-grid">
                 <div class="reveal">
@@ -691,7 +940,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="servicos">
+    <section class="section-padding" id="servicos" style="background-color: var(--white);">
         <div class="container">
             <div class="text-center reveal">
                 <h2 class="section-title">Meus Serviços de Estética Facial em Paulicéia,<br>São Bernardo do Campo</h2>
@@ -701,72 +950,76 @@
             <div class="services-grid">
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img src="" alt="Limpeza de Pele Profunda" class="service-img" loading="lazy">
                     </div>
                     <div class="service-card-body">
                         <div>
+                            <img src="imagem/limpeza-de-pele-profunda-pauliceia-sao-bernardo-sp.jpg" alt="Limpeza de pele profunda em Paulicéia, São Bernardo do Campo" srcset="">
                             <h3>Limpeza de Pele Profunda</h3>
                             <p>Um procedimento indicado para remover cravos, impurezas e excesso de oleosidade, ajudando a deixar a pele mais limpa, renovada e saudável.</p>
                         </div>
-                        <a href="Limpeza-de-Pele-Profunda-em-Paulicéia-São-Bernardo-do-Campo.html" class="btn btn-primary" target="_blank" rel="noopener">Agendar este serviço</a>
+                        <a href="limpeza-de-pele-profunda-pauliceia-sao-bernardo-do-campo.html" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
                     </div>
                 </div>
 
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img srcq=80" alt="Microagulhamento Facial" class="service-img" loading="lazy">
+                        <img src="imagem/microagulhamento-facial-pauliceia-sao-bernardo-do-campo.jpg" alt=" Microagulhamento facial em Paulicéia, São Bernardo do Campo">
                     </div>
                     <div class="service-card-body">
+                        
                         <div>
                             <h3>Microagulhamento Facial</h3>
                             <p>Tratamento que estimula o colágeno e auxilia na melhora da textura da pele, marcas de acne, poros e linhas finas.</p>
                         </div>
-                        <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Microagulhamento%20Facial" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
+                        <a href="microagulhamento-facial-pauliceia-sao-bernardo-do-campo.html" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
                     </div>
                 </div>
 
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img src="80" alt="Micropigmentação de Sobrancelhas" class="service-img" loading="lazy">
+                        <img src="imagem/micropigmentacao-de-sobrancelhas-resultado-pauliceia-sao-bernardo-do-campo.jpg" alt="Resultado de micropigmentação de sobrancelhas em Paulicéia, São Bernardo do Campo" class="service-img" loading="lazy">
                     </div>
                     <div class="service-card-body">
                         <div>
                             <h3>Micropigmentação de Sobrancelhas</h3>
                             <p>Ajuda a corrigir falhas e valorizar o olhar, criando um formato mais harmônico e natural.</p>
                         </div>
-                        <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Micropigmentação%20de%20Sobrancelhas" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
+                         <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Depilação%20com%20Cera" class="btn btn-primary" target="_blank" rel="noopener">Agendar este serviço</a>
+                 
                     </div>
                 </div>
 
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img src="" alt="Micropigmentação Labial" class="service-img" loading="lazy">
+                        <img src="imagem/micropigmentacao-de-labios-pauliceia-sao-bernardo-do-campo.jpg" alt="Micropigmentação labial em Paulicéia, São Bernardo do Campo" class="service-img" loading="lazy">
                     </div>
                     <div class="service-card-body">
                         <div>
                             <h3>Micropigmentação Labial</h3>
                             <p>Realça a beleza dos lábios, proporcionando mais definição e uma tonalidade mais uniforme.</p>
                         </div>
-                        <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Micropigmentação%20Labial" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
+                         <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Depilação%20com%20Cera" class="btn btn-primary" target="_blank" rel="noopener">Agendar este serviço</a>
+                 
                     </div>
                 </div>
 
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img src="" alt="Drenagem Linfática" class="service-img" loading="lazy">
+                        <img src="imagem/drenagem linfatica.jpg" alt=" Drenagem linfática" class="service-img" loading="lazy">
                     </div>
                     <div class="service-card-body">
                         <div>
                             <h3>Drenagem Linfática</h3>
                             <p>Um cuidado corporal que auxilia na sensação de leveza e bem-estar.</p>
                         </div>
-                        <a href="Drenagem-linfática-em-Paulicéia-São-Bernardo-do-Campo.html" class="btn btn-primary" target="_blank" rel="noopener">veja mais</a>
+                 <a href="https://wa.me/5511994986162?text=Quero%20saber%20mais%20sobre%20Depilação%20com%20Cera" class="btn btn-primary" target="_blank" rel="noopener">Agendar este serviço</a>
+                 
                     </div>
                 </div>
 
                 <div class="service-card reveal">
                     <div style="overflow: hidden;">
-                        <img src="" alt="Depilação com Cera" class="service-img" loading="lazy">
+                        <img src="imagem/depilacao-com-cera-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="Depilação com cera em Paulicéia, São Bernardo do Campo" class="service-img" loading="lazy">
                     </div>
                     <div class="service-card-body">
                         <div>
@@ -814,7 +1067,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="galeria">
+    <section class="section-padding" id="galeria" style="background-color: #F1ECE6;">
         <div class="container text-center">
             <span class="section-subtitle reveal">Antes e Depois</span>
             <h2 class="section-title reveal">Resultados dos tratamentos em Paulicéia,<br> São Bernardo do Campo</h2>
@@ -822,55 +1075,155 @@
 
             <div class="gallery-grid reveal">
                 <div class="gallery-item">
-                    <img src="imagem/antes-durante-depois-limpeza-de-pele-com-mascara-led-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="Limpeza de pele resultado" loading="lazy">
+                    <img src="imagem/antes-e-depois-limpeza-de-pele-profunda-pauliceia-sao-bernardo-do-campo.jpg" alt="Antes e depois da limpeza de pele profunda em Paulicéia, São Bernardo do Campo" loading="lazy">
                     <div class="gallery-caption">Limpeza de Pele</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1512290900676-26c2a48f9f3d?auto=format&fit=crop&w=600&q=80" alt="Microagulhamento resultado" loading="lazy">
-                    <div class="gallery-caption">Microagulhamento</div>
+                    <img src="imagem/antes-e-depois-microagulhamento-facial-pauliceia-sao-bernardo-do-campo.jpg" alt="Antes e depois do microagulhamento facial em Paulicéia, São Bernardo do Campo" loading="lazy">
+                    
+                    <div class="gallery-caption">Microagulhamento facial</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="" alt="Micropigmentação de sobrancelhas resultado" loading="lazy">
+                    <img src="imagem/antes-e-depois-micropigmentacao-de-sobrancelhas-sao-bernardo-do-campo .jpg" alt="Antes e depois da micropigmentação de sobrancelhas em Paulicéia, São Bernardo do Campo" loading="lazy">
                     <div class="gallery-caption">Micropigmentação de Sobrancelhas</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="0" alt="Micropigmentação labial resultado" loading="lazy">
+                    <img src="micropigmentacao-labial-em-pauliceia-sao-bernardo-do-campo-sp.jpg" alt="Micropigmentação labial resultado" loading="lazy">
                     <div class="gallery-caption">Micropigmentação Labial</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Drenagem linfática resultado" loading="lazy">
-                    <div class="gallery-caption">Drenagem Linfática</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="" alt="Depilação com cera resultado" loading="lazy">
-                    <div class="gallery-caption">Depilação com Cera</div>
-                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="reveal" style="margin-top: 2.5rem;">
-                <a href="https://wa.me/5511994986162?text=Olá!%20Quero%20ter%20esses%20resultados%20também." class="btn btn-primary" target="_blank" rel="noopener">✨ Quero Transformar Minha Pele</a>
+    <section class="section-padding" id="quemsou" style="background-color: var(--white);">
+        <div class="container">
+            <div class="quemsou-grid">
+                <div class="reveal">
+                    <img src="imagem/flavia-demetrio-esteticista-pauliceia-sao-bernardo-do-campo.jpg" alt="Flávia Demétrio, esteticista em Paulicéia, São Bernardo do Campo" class="quemsou-img" loading="lazy">
+                </div>
+                <div class="reveal">
+                    <span class="section-subtitle">Quem Sou</span>
+                    <h2 class="section-title">Flávia Demétrio, esteticista em Paulicéia, São Bernardo do Campo</h2>
+                    <div>
+                        <a href="https://wa.me/5511994986162?text=Olá!%20Vim%20pela%20seção%20Quem%20Sou%20e%20gostaria%20de%20conhecer%20o%20Studio." class="btn btn-primary" target="_blank" rel="noopener">📲 Falar com a Flávia</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section-padding" id="avaliacoes" style="background-color: #F1ECE6;">
         <div class="container text-center">
-            <span class="section-subtitle reveal">Depoimentos</span>
-            <h2 class="section-title reveal">O que minhas clientes dizem</h2>
+            <span class="section-subtitle reveal">Avaliações no Google</span>
+            <h2 class="section-title reveal">O que nossas clientes dizem</h2>
+            <p class="reveal">Confira algumas avaliações reais de clientes do Studio Flávia Demétrio.</p>
 
-            <div class="reviews-grid">
-                <div class="review-card reveal">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Excelente atendimento, a Flávia é muito cuidadosa e explica cada etapa do procedimento."</p>
+            <div class="depoimentos-container reveal">
+
+                <!-- Daiana Lima -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocIQk8eTx1nbTXJD5Sq9KAyLkkNMbRcL18Y_tHprRImv1J4N8g=s36-c-rp-mo-br1002" alt="Daiana Lima">
+                        <div>
+                            <strong>Daiana Lima</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Experiência maravilhosa do início ao fim! ✨ Profissional extremamente cuidadosa, atenciosa e competente. Fiquei muito..."</p>
+                    <span class="google">★ Avaliação no Google</span>
                 </div>
-                <div class="review-card reveal">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Adorei o atendimento, ambiente agradável e resultado maravilhoso."</p>
+
+                <!-- Luna Faustino -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjVfa8vynmcCUYniUcKE5sNd-2r-SIzl3GS57DOaPFOZrZgg1p6p=s36-c-rp-mo-br100" alt="Luna Faustino">
+                        <div>
+                            <strong>Luna Faustino</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Flávia é uma excelente profissional que entrega ótimos resultados e faz vc se sentir muito confortável durante o processo ❤️"</p>
+                    <span class="google">★ Avaliação no Google</span>
                 </div>
-                <div class="review-card reveal">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Profissional muito atenciosa, recomendo."</p>
+
+                <!-- Andressa Soares -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjWDdhfsfFglrCxRQmqt2XpzoidwhBZCferWu8wg_kQI3JxGYYeA=s36-c-rp-mo-br100" alt="Andressa Soares">
+                        <div>
+                            <strong>Andressa Soares</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Foi uma experiência única, muito atenciosa a profissional Flávia, muito explicativa sobre o procedimento... fácil..."</p>
+                    <span class="google">★ Avaliação no Google</span>
                 </div>
+
+                <!-- Sarah Peres -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUZfM3jNQLD41otXUNqCmw8s1oExAcJbFvgcfFVFVdQgKK9LoPn4g=s36-c-rp-mo-br100" alt="Sarah Peres">
+                        <div>
+                            <strong>Sarah Peres</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Espaço aconchegante, atendimento maravilhoso e a profissional super atenciosa, no Studio Flávia Demétrio é um verdadeiro tratamento de princesa, confio demais e indico para todas, amei a experiência, irei mais vezes!"</p>
+                    <span class="google">★ Avaliação no Google</span>
+                </div>
+
+                <!-- Yasmin -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjWzYmA43WiZsP65WyRHdt4YI1pik2r96VEVkThEDq2Q2Bn5JZ8B=s36-c-rp-mo-br100" alt="Yasmin">
+                        <div>
+                            <strong>Yasmin</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Espaço muito bonito e aconchegante, sai bela me sentindo incrível"</p>
+                    <span class="google">★ Avaliação no Google</span>
+                </div>
+
+                <!-- Fátima Paixão -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocJ5SQykbVdR1kYmeAX96e_2sEkwSZ26rgf500ngP6rEMXyFEg=s36-c-rp-mo-br100" alt="Fátima Paixão">
+                        <div>
+                            <strong>Fátima Paixão</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"O espaço maravilhoso e aconchegante. Excelente profissional, amei o trabalho e minha experiência no Studio Flávia Demétrio"</p>
+                    <span class="google">★ Avaliação no Google</span>
+                </div>
+
+                <!-- Eliane Coelho -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUzBo4wp6V8P7rXadmPhdNzFTXOkrTo56Ql4vp2sQ2-hJ1xCB-Frg=s36-c-rp-mo-ba3-br100" alt="Eliane Coelho">
+                        <div>
+                            <strong>Eliane Coelho</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Ótimo profissional e um bom preço, parabéns!"</p>
+                    <span class="google">★ Avaliação no Google</span>
+                </div>
+
+                <!-- Hugo Ximenes -->
+                <div class="depoimento">
+                    <div class="depoimento-topo">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUvOyfCF8DAmSTOu1Z3KIQHvBGFSwDxafoSLsy-jTR2EXm8cUEf=s36-c-rp-mo-br100" alt="Hugo Ximenes">
+                        <div>
+                            <strong>Hugo Ximenes</strong>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Amei ❤️❤️"</p>
+                    <span class="google">★ Avaliação no Google</span>
+                </div>
+
             </div>
 
             <div class="reveal" style="margin-top: 2.5rem;">
@@ -879,7 +1232,7 @@
         </div>
     </section>
 
-    <section class="section-padding">
+    <section class="section-padding" style="background-color: var(--white);">
         <div class="container">
             <div class="text-center reveal">
                 <span class="section-subtitle">Tire suas dúvidas</span>
@@ -903,6 +1256,13 @@
                     <h3>Como faço para agendar?</h3>
                     <p>Entre em contato pelo WhatsApp para escolher seu horário.</p>
                 </div>
+                <div class="faq-item">
+                    <h3>Quais áreas o Studio Flávia Demétrio atende?</h3>
+                    <p>O Studio Flávia Demétrio atende clientes da Paulicéia e de bairros próximos de São Bernardo do Campo, incluindo Taboão, Anchieta, Assunção, Jardim do Mar e Vila Caminho do Mar. Também recebe clientes de regiões próximas, como Centro de Diadema e Jardim Bom Pastor, em Santo André.
+
+</p>
+                </div>
+         
             </div>
 
             <div class="text-center reveal" style="margin-top: 2.5rem;">
@@ -928,8 +1288,17 @@
                     <a href="https://wa.me/5511994986162?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary" target="_blank" rel="noopener">📲 Agendar pelo WhatsApp</a>
                 </div>
 
-                <div class="map-box">
-                    <iframe src="https://maps.google.com/maps?q=Rua%20M.M.D.C.,%20455,%20Paulic%C3%A9ia,%20S%C3%A3o%20Bernardo%20do%20Campo&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" title="Mapa do Studio Flavia Demétrio"></iframe>
+                <div class="mapa-container">
+                    <iframe
+                        src="https://www.google.com/maps?q=R.%20M.M.D.C.,%20455%20-%20Paulicéia,%20São%20Bernardo%20do%20Campo%20-%20SP,%2009690-000&output=embed"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa do Studio Flavia Demétrio">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -951,6 +1320,7 @@
                     <ul>
                         <li><a href="#hero">Início</a></li>
                         <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#quemsou">Quem Sou</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#avaliacoes">Avaliações</a></li>
                         <li><a href="#contato">Contato</a></li>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microagulhamento Facial em Paulicéia, São Bernardo do Campo | Studio Flávia Demétrio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-logo-flavia-demetrio-estetica-facial-pauliceia-sao-bernardo-do-campo.png" type="image/png">
+<style>
+  :root{
+    --purple-deep:#3B1748;
+    --purple-mid:#5A2A6E;
+    --purple-soft:#7A4A8F;
+    --gold:#C9A24C;
+    --gold-light:#E4C97E;
+    --cream:#F8F3EA;
+    --cream-dark:#EFE4D2;
+    --text-dark:#2B1730;
+    --text-muted:#6B5C74;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--text-dark);
+    background:var(--white);
+    line-height:1.65;
+    font-weight:300;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display',serif;
+    color:var(--purple-deep);
+    font-weight:600;
+    line-height:1.25;
+  }
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:600;
+    display:block;
+    margin-bottom:.6rem;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .btn{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:var(--purple-deep);
+    font-weight:600;
+    padding:15px 34px;
+    border-radius:2px;
+    letter-spacing:.03em;
+    font-size:.95rem;
+    box-shadow:0 8px 24px rgba(201,162,76,.35);
+    transition:transform .25s ease, box-shadow .25s ease;
+    border:none;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,76,.45);}
+  .btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.5);
+    color:var(--white);
+    box-shadow:none;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,.1);box-shadow:none;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(122,74,143,.55), transparent 60%),
+      linear-gradient(160deg,var(--purple-deep) 0%, var(--purple-mid) 55%, #2A0F35 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(228,201,126,.15), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(228,201,126,.08), transparent 35%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;padding:100px 0 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero-text{max-width:none;}
+  .hero-photo{
+    position:relative;
+    border-radius:6px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    background:linear-gradient(155deg,var(--purple-soft),var(--purple-deep));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    border:1px solid rgba(228,201,126,.25);
+  }
+  .hero-photo::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(228,201,126,.45), transparent 55%),
+      radial-gradient(circle at 80% 85%, rgba(255,255,255,.12), transparent 45%);
+  }
+  .hero-photo svg{position:relative;z-index:2;width:36%;opacity:.92;}
+  .hero-photo .photo-tag{position:absolute;bottom:16px;left:16px;z-index:2;}
+  .hero .eyebrow{color:var(--gold-light);}
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(2rem,4vw,3rem);
+    margin-bottom:22px;
+  }
+  .hero h1 em{color:var(--gold-light);font-style:normal;}
+  .hero p{
+    color:rgba(255,255,255,.82);
+    font-size:1.05rem;
+    margin-bottom:38px;
+    font-weight:300;
+  }
+  .hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  section{padding:80px 0;}
+  .alt{background:var(--cream);}
+
+  /* photo blocks */
+  .photo{
+    position:relative;
+    border-radius:4px;
+    overflow:hidden;
+    background:linear-gradient(155deg,var(--purple-soft),var(--purple-deep));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .photo::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(228,201,126,.45), transparent 55%),
+      radial-gradient(circle at 80% 85%, rgba(255,255,255,.12), transparent 45%);
+  }
+  .photo svg{position:relative;z-index:2;width:34%;opacity:.92;}
+
+  /* CORREÇÃO: imagens reais (<img>) dentro de .photo precisam preencher o
+     bloco corretamente, sem cortar nem esticar */
+  .photo img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .photo-tag{
+    position:absolute;bottom:16px;left:16px;z-index:3;
+    background:rgba(59,23,72,.55);
+    color:var(--gold-light);
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:2px;
+    backdrop-filter:blur(2px);
+  }
+
+  /* two column intro */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:0;
+    align-items:stretch;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(59,23,72,.12);
+  }
+  .intro-visual{aspect-ratio:auto;min-height:420px;border-radius:0;}
+  .intro-copy{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;background:var(--white);}
+  .intro-copy h2{font-size:1.9rem;margin-bottom:16px;}
+  .intro-copy p{color:var(--text-muted);margin-bottom:14px;font-size:.98rem;}
+
+  /* section header centered */
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 52px;}
+  .sec-head h2{font-size:2rem;}
+  .sec-head p{color:var(--text-muted);margin-top:14px;}
+
+  /* objective list */
+  .obj-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:820px;
+    margin:0 auto;
+  }
+  .obj-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--white);
+    border:1px solid var(--cream-dark);
+    padding:18px 20px;
+    border-radius:3px;
+  }
+  .obj-item .dot{
+    flex:none;
+    width:9px;height:9px;
+    margin-top:7px;
+    border-radius:50%;
+    background:var(--gold);
+  }
+  .obj-item span{font-size:.98rem;color:var(--text-dark);}
+
+  /* GALERIA — CORRIGIDA
+     Antes: grid de 3 colunas fixas fazia a única imagem de antes/depois
+     ficar espremida em 1/3 do espaço, com aspect-ratio 3/4 forçado.
+     Agora: a imagem única fica centralizada, grande, com a proporção real dela. */
+  .gallery{
+    display:flex;
+    justify-content:center;
+  }
+  .gallery-item{
+    position:relative;
+    width:100%;
+    max-width:720px;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(59,23,72,.15);
+  }
+  .gallery-item img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+  }
+
+  /* Se um dia você tiver várias imagens de antes/depois, use esta variação:
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:20px;
+  }
+  .gallery-item{aspect-ratio:3/4;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;}
+  */
+
+  /* who its for */
+  .who-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  
+    align-items:center;
+  }
+  .who-list{list-style:none;}
+  .who-list li{
+    padding:14px 0 14px 30px;
+    position:relative;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    color:var(--white);
+  }
+  .who-list li:last-child{border-bottom:none;}
+  .who-list li::before{
+    content:"—";
+    position:absolute;left:0;top:14px;
+    color:var(--gold);
+    font-weight:600;
+  }
+
+  /* why choose */
+  .why{
+    background:linear-gradient(160deg,var(--purple-deep),#2A0F35);
+    color:var(--white);
+  }
+  .why .sec-head h2{color:var(--white);}
+  .why .sec-head p{color:rgba(255,255,255,.75);}
+  .why-text{max-width:700px;margin:0 auto;text-align:center;}
+  .why-text p{color:rgba(255,255,255,.85);margin-bottom:16px;font-size:1.02rem;}
+
+  /* location */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;background:var(--cream);border-radius:4px;overflow:hidden;}
+  .loc-info{padding:52px;}
+  .loc-info h2{font-size:1.8rem;margin-bottom:16px;}
+  .loc-info p{color:var(--text-muted);margin-bottom:24px;}
+  .loc-map{
+    background:linear-gradient(155deg,var(--purple-soft),var(--purple-deep));
+    min-height:280px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-light);
+    font-family:'Playfair Display',serif;
+    font-size:1.1rem;
+    text-align:center;
+    padding:24px;
+  }
+
+  /* faq */
+  .faq{max-width:760px;margin:0 auto;}
+  details{
+    background:var(--white);
+    border:1px solid var(--cream-dark);
+    border-radius:3px;
+    margin-bottom:12px;
+    padding:20px 24px;
+  }
+  summary{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    color:var(--purple-deep);
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:1.02rem;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    font-size:1.4rem;
+    color:var(--gold);
+    font-weight:400;
+    transition:transform .25s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{color:var(--text-muted);margin-top:14px;font-size:.96rem;}
+
+  /* final cta */
+  .final-cta{
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(228,201,126,.18), transparent 60%),
+      linear-gradient(160deg,var(--purple-mid),var(--purple-deep));
+    color:var(--white);
+    padding:100px 24px;
+    border-radius:0;
+  }
+  .final-cta .eyebrow{color:var(--gold-light);}
+  .final-cta h2{color:var(--white);font-size:2.1rem;max-width:600px;margin:0 auto 16px;}
+  .final-cta p{color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 34px;}
+
+  footer{
+    background:#210A2B;
+    color:rgba(255,255,255,.6);
+    text-align:center;
+    padding:36px 24px;
+    font-size:.85rem;
+  }
+  footer strong{color:var(--gold-light);font-family:'Playfair Display',serif;}
+
+  @media(max-width:820px){
+    .intro-grid,.who-grid,.loc-grid{grid-template-columns:1fr;}
+    .intro-visual{order:-1;}
+    .obj-grid{grid-template-columns:1fr;}
+    .hero-inner{grid-template-columns:1fr;padding:80px 0 60px;}
+    .hero-photo{aspect-ratio:16/10;order:-1;}
+    section{padding:64px 0;}
+    .gallery-item{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Studio Flávia Demétrio · Estética Facial</span>
+        <h1>Microagulhamento Facial em Paulicéia, <em>São Bernardo do Campo</em></h1>
+        <p>Quer melhorar a aparência da pele, textura, poros aparentes ou marcas de acne? No Studio Flávia Demétrio, você encontra microagulhamento facial em Paulicéia, São Bernardo do Campo, com atendimento personalizado de acordo com as características e necessidades da sua pele.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn">Agendar pelo WhatsApp</a>
+          <a href="#faq" class="btn btn-outline">Tirar dúvidas</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="imagem/microagulhamento-facial-pauliceia-sao-bernardo-do-campo.jpg" alt="microagulhamento-facial-studio-flavia-demetrio-pauliceia-sao-bernardo-do-campo.jpg">
+        <span class="photo-tag">Studio Flávia Demétrio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section>
+    <div class="wrap intro-grid">
+      <div class="photo intro-visual">
+        <img src="microagulhamento-facial/Microagulhamento Facial .jpg" alt="">
+        <span class="photo-tag">Microagulhamento Facial</span>
+      </div>
+      <div class="intro-copy">
+        <span class="eyebrow">O que é</span>
+        <h2>Microagulhamento Facial em Paulicéia</h2>
+        <p>O microagulhamento facial é um procedimento estético realizado com pequenas perfurações controladas na pele. A técnica é utilizada para estimular processos naturais de renovação e produção de colágeno, de acordo com a avaliação e indicação profissional.</p>
+        <p>O microagulhamento facial pode ser indicado para auxiliar na melhora da textura da pele, aparência de poros, marcas e cicatrizes de acne e linhas finas. Cada protocolo deve ser definido individualmente após avaliação da pele.</p>
+        <p>Eu sou Flávia, esteticista e responsável pelo Studio Flávia Demétrio. Realizo cada atendimento com atenção às necessidades e características da pele. Em Paulicéia, São Bernardo do Campo, o microagulhamento facial é realizado com protocolo personalizado e orientação individual.</p>
+        <p>Cuide da sua pele com um protocolo de microagulhamento facial pensado para você.</p>
+        <a href="#" class="btn" style="width:fit-content;margin-top:10px;">Agendar meu microagulhamento facial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É INDICADA -->
+  <section class="why">
+    <div class="wrap who-grid">
+      <div class="photo" style="min-height:340px;">
+        <img src="microagulhamento-facial/Microagulhamento-Facial2.jpg" alt="">
+      </div>
+      <div>
+        <span class="eyebrow">Para quem é indicado</span>
+        <h2 style="color:var(--white);font-size:1.8rem;margin-bottom:16px;">Para quem é indicado o microagulhamento facial?</h2>
+        <ul class="who-list" style="color:var(--white);">
+          <li>Para quem sofre com <strong>cicatrizes causadas por acne</strong></li>
+          <li>Para quem apresenta <strong>cicatrizes cirúrgicas</strong></li>
+          <li>Para quem possui <strong>poros dilatados</strong></li>
+          <li>Para quem sofre com <strong>manchas de melasma</strong></li>
+          <li>Para quem apresenta <strong>rugas finas</strong></li>
+          <li>Para quem sofre com <strong>flacidez</strong></li>
+          <li>Para quem deseja <strong>melhorar a textura da pele</strong></li>
+        </ul>
+        <div style="margin-top:24px;"><a href="#" class="btn">Falar com a Flávia</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE É / OBJETIVOS -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Para que serve</span>
+        <h2>Benefícios do microagulhamento facial em Paulicéia, São Bernardo do Campo</h2>
+        <p>O microagulhamento facial pode ser procurado por diferentes motivos. A indicação depende da avaliação da pele e dos objetivos de cada pessoa.</p>
+      </div>
+      <div class="obj-grid">
+        <div class="obj-item"><span class="dot"></span><span><strong>Redução da aparência de cicatrizes</strong></span></div>
+        <div class="obj-item"><span class="dot"></span><span><strong>Melhora da aparência dos poros dilatados</strong></span></div>
+        <div class="obj-item"><span class="dot"></span><span><strong>Ajuda a melhorar a aparência das manchas de melasma</strong></span></div>
+        <div class="obj-item"><span class="dot"></span><span><strong>Ajuda a suavizar a aparência de rugas e linhas finas</strong></span></div>
+        <div class="obj-item"><span class="dot"></span><span><strong>Ajuda a melhorar a aparência da flacidez</strong></span></div>
+        <div class="obj-item"><span class="dot"></span><span><strong>Melhora da textura e uniformidade da pele</strong></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Antes e depois de microagulhamento facial em Paulicéia e São Bernardo do Campo</h2>
+      </div>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="imagem/antes-e-depois-microagulhamento-facial-pauliceia-sao-bernardo-do-campo.jpg" alt="Antes e depois do microagulhamento facial no Studio Flávia Demétrio em Paulicéia, São Bernardo do Campo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section>
+    <div class="wrap loc-grid">
+      <div class="loc-info">
+        <span class="eyebrow">Localização</span>
+        <h2>Studio Flávia Demétrio</h2>
+        <p>O Studio Flávia Demétrio está localizado em Paulicéia, São Bernardo do Campo – SP. Se você mora em Paulicéia ou em bairros próximos e está pesquisando por microagulhamento facial perto de mim, entre em contato para saber mais sobre o atendimento.</p>
+        <a href="#" class="btn">Ver localização</a>
+      </div>
+      <div class="loc-map">Rua M.M.D.C., 455 — Paulicéia<br>São Bernardo do Campo – SP</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas sobre microagulhamento facial</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Qual o valor do microagulhamento facial em Paulicéia?</summary>
+          <p>O valor do microagulhamento facial em Paulicéia, São Bernardo do Campo, pode variar conforme o protocolo e as necessidades da pele. Para saber o valor atualizado e consultar os horários disponíveis, entre em contato com o Studio Flávia Demétrio pelo WhatsApp.</p>
+        </details>
+        <details>
+          <summary>O microagulhamento facial melhora a pele?</summary>
+          <p>O microagulhamento facial pode auxiliar na melhora da textura, aparência de poros, marcas e cicatrizes de acne e linhas finas, conforme avaliação e indicação profissional.</p>
+        </details>
+        <details>
+          <summary>O microagulhamento facial é indicado para todos os tipos de pele?</summary>
+          <p>A indicação depende das características da pele, do histórico da pessoa e do objetivo do tratamento. A avaliação profissional é importante para definir se o procedimento é adequado.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo dura uma sessão de microagulhamento facial?</summary>
+          <p>O tempo pode variar conforme o protocolo, a avaliação e as necessidades da pele.</p>
+        </details>
+        <details>
+          <summary>Quantas sessões de microagulhamento facial são necessárias?</summary>
+          <p>A quantidade de sessões varia conforme o objetivo, as características da pele e a avaliação profissional. O protocolo é individualizado.</p>
+        </details>
+        <details>
+          <summary>O microagulhamento facial dói?</summary>
+          <p>A sensação pode variar conforme a sensibilidade individual e o protocolo utilizado. Durante a avaliação, são explicadas as etapas e os cuidados necessários.</p>
+        </details>
+        <details>
+          <summary>Onde fazer microagulhamento facial em São Bernardo do Campo?</summary>
+          <p>O microagulhamento facial em São Bernardo do Campo é realizado no Studio Flávia Demétrio, localizado na região da Paulicéia. O atendimento é voltado para quem deseja cuidar da pele e melhorar sua aparência, textura e uniformidade. Atendemos clientes de regiões próximas, como Taboão, Anchieta, Assunção, Jardim do Mar e Vila Caminho do Mar. Entre em contato para saber mais sobre o microagulhamento facial e agendar seu atendimento.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <span class="eyebrow">Agende sua sessão</span>
+    <h2>Quer cuidar da textura e aparência da sua pele?</h2>
+    <p>Consulte o valor do microagulhamento facial e verifique os horários disponíveis no Studio Flávia Demétrio.</p>
+    <a href="#" class="btn">Agendar pelo WhatsApp</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Studio Flávia Demétrio</strong><br>
+    Microagulhamento Facial em Paulicéia, São Bernardo do Campo – SP · Estética facial com atendimento personalizado e cuidado com a sua pele.
+  </footer>
+
+</body>
+</html>
